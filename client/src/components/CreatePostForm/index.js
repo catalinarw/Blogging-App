@@ -3,6 +3,22 @@ import React from "react";
 const CreatePostForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch({ type: LOADING });
+    API.savePost({
+      title: titleRef.current.value,
+      body: bodyRef.current.value,
+      author: authorRef.current.value
+    })
+      .then(result => {
+        dispatch({
+          type: ADD_POST,
+          post: result.data
+        });
+      })
+      .catch(err => console.log(err));
+
+    titleRef.current.value = "";
+    bodyRef.current.value = "";
   };
 
   return (
