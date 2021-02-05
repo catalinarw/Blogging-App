@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_POST, LOADING } from "../../utils/actions";
+import API from "../../utils/API";
 
 const CreatePostForm = () => {
+  const titleRef = useRef();
+  const bodyRef = useRef();
+  const authorRef = useRef();
+  const [state, dispatch] = useStoreContext();
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({ type: LOADING });
