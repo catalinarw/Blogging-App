@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@ant-design/icons": "^4.4.0",
     "antd": "^4.12.2",
     "axios": "^0.18.0",
     "react": "^16.6.3",
