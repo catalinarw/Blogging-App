@@ -15,7 +15,7 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case SET_CURRENT_POST:
+  case SET_CURRENT_POST:
     return {
       ...state,
       currentPost: action.post,
@@ -71,6 +71,7 @@ const reducer = (state, action) => {
       ...state,
       loading: true
     };
+
   default:
     return state;
   }
@@ -88,7 +89,6 @@ const StoreProvider = ({ value = [], ...props }) => {
     favorites: [],
     loading: false
   });
- 
 
   return <Provider value={[state, dispatch]} {...props} />;
 };

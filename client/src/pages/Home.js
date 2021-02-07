@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 import CreatePostForm from "../components/CreatePostForm";
 import PostsList from "../components/PostsList";
 
-function Home() {
+const Home = () => {
   return (
     <Container fluid>
       <Row>
@@ -16,6 +16,6 @@ function Home() {
       </Row>
     </Container>
   );
-}
+};
 
 export default Home;
