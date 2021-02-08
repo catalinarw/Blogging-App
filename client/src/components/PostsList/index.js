@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
-import { List, Avatar, Space } from 'antd';
+import { List, Avatar, Space, Typography } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
-
+const { Title } = Typography;
 
 function PostsList() {
   const [state, dispatch] = useStoreContext();
@@ -42,6 +42,10 @@ function PostsList() {
 console.log(state.posts);
 const data = state.posts
   return (
+    <>
+    <Typography>
+      <Title level={3}>All Posts</Title>
+    </Typography>
     <List
     itemLayout="horizontal"
     dataSource={data}
@@ -57,29 +61,7 @@ const data = state.posts
     )}
   />
   
-    // <div>
-    //   <h1>All Blog Posts</h1>
-    //   <h3 className="mb-5 mt-5">Click on a post to view</h3>
-    //   {state.posts.length ? (
-    //     <List>
-    //       {state.posts.map(post => (
-    //         <ListItem key={post._id}>
-    //           <Link to={"/posts/" + post._id}>
-    //             <strong>
-    //               {post.title} by {post.author}
-    //             </strong>
-    //           </Link>
-    //           <DeleteBtn onClick={() => removePost(post._id)} />
-    //         </ListItem>
-    //       ))}
-    //     </List>
-    //   ) : (
-    //     <h3>You haven't added any posts yet!</h3>
-    //   )}
-    //   <div className="mt-5">
-    //     <Link to="favorites">View favorites</Link>
-    //   </div>
-    // </div>
+    </>
   )
 }
 

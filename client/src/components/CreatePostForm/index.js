@@ -2,7 +2,9 @@ import React, { useRef } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Typography } from 'antd';
+const { TextArea } = Input;
+const { Title, Paragraph, Text, Link } = Typography;
 function CreatePostForm() {
   const titleRef = useRef();
   const bodyRef = useRef();
@@ -49,6 +51,10 @@ function CreatePostForm() {
   };
 
   return (
+    <>
+   <Typography>
+     <Title level={3}>Create New Post</Title>
+   </Typography>
     
 <Form
      onFinish={onFinish}
@@ -63,20 +69,20 @@ function CreatePostForm() {
         < Input   />
       </Form.Item>
       <Form.Item
-        label="Body"
-        name="bodyRef"
-       
-        rules={[{ required: true  }]}
-      >
-        < Input  />
-      </Form.Item>
-      <Form.Item
         label="Author"
         name="authorRef"
         
         rules={[{ required: true }]}
       >
         < Input  />
+      </Form.Item>
+      <Form.Item
+        label="Body"
+        name="bodyRef"
+       
+        rules={[{ required: true  }]}
+      >
+        <TextArea rows={10} />
       </Form.Item>
 
 
@@ -89,23 +95,9 @@ function CreatePostForm() {
       </Form.Item>
     </Form>
 
-    // <div>
-    //   <div className="jumbotron">
-    //     <img
-    //       className="img-fluid img-thumbnail"
-    //       src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-    //     />
-    //   </div>
-    //   <h1>Create a blog post</h1>
-    //   <form className="form-group mt-5 mb-5" onSubmit={handleSutbmi}>
-    //     <input className="form-control mb-5" required ref={titleRef} placeholder="Title" />
-    //     <textarea className="form-control mb-5" required ref={bodyRef} placeholder="Body" />
-    //     <input className="form-control mb-5" ref={authorRef} placeholder="Screen name" />
-    //     <button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
-    //       Save Post
-    //     </button>
-    //   </form>
-    // </div>
+    
+ 
+    </>
   );
 }
 
