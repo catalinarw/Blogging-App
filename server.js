@@ -10,7 +10,7 @@ app.use(express.json())
 
 mongoose.connect("mongodb+srv://catalina-admin:fliaJUchyWudg52g@cluster0.xttdr.mongodb.net/blogPostsDB")
 
-app.use("/", require("./routes"))
+app.use("/", require("./routes/index.js"))
 //if the app is in Production mode use the 
 //static files located in the build folder
 if(process.env.NODE_ENV === 'production') {
