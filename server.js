@@ -5,8 +5,11 @@ const mongoose = require("mongoose")
 const path = require("path")
 const port = process.env.PORT || 5000
 const routes = require("./routes")
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); 
+
+
 app.use(cors());
-app.use(express.json())
 
 mongoose.connect("mongodb+srv://catalina-admin:fliaJUchyWudg52g@cluster0.xttdr.mongodb.net/blogPostsDB")
 
