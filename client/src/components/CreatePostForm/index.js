@@ -89,7 +89,7 @@ function CreatePostForm() {
      
 
       <Form.Item>
-        <Button type="primary" disabled={state.loading}  htmlType="submit">
+        <Button onClick={handleSubmit}type="primary" disabled={state.loading}  htmlType="submit">
           Submit
         </Button>
       </Form.Item>
