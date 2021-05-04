@@ -7,13 +7,13 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.4",
-    "nodemon": "^1.19.4",
-    "path": "^0.12.7"
+    "nodemon": "^1.19.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,5 @@
   "bugs": {
     "url": "https://github.com/catalinarose1361/Blogging-App/issues"
   },
-  "homepage": "https://github.com/catalinarose1361/Blogging-App#readme"
+  "homepage": "https://blogging-app-crw.herokuapp.com/"
 }
