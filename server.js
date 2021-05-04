@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const cors = require("cors")
-const mongoose = require("mongoose")
-const path = require("path")
-const port = process.env.PORT || 5000
-const routes = require("./routes")
+const cors = require("cors");
+const mongoose = require("mongoose");
+const path = require("path");
+const port = process.env.PORT || 5000;
+const routes = require("./routes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); 
 
