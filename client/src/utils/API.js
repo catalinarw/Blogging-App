@@ -1,11 +1,16 @@
 import axios from "axios";
 
 export default {
-  // Gets all posts
+
+  // GETS ALL POSTS
   getPosts: function() {
+
     return axios.get("/api/posts");
+
   },
+
   // Gets the post with the given id
+  // GETS POST WITH A GIVEN ID
   getPost: function(id) {
     return axios.get("/api/posts/" + id);
   },
